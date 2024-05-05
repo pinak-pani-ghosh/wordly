@@ -17,18 +17,20 @@ while tries < 6:
         status = True
         break
     else:
+        idx = 0
         for letter in guess:
             if letter in letters_left:
                 letters_left.remove(letter)
-            if letter not in letters_left:
+            if letter not in letters_used:
                 letters_used.append(letter)
                 letters_used.sort()
-            if letter in word and letter == word[guess.index(letter)]:
+            if letter in word and letter == word[idx]:
                 print(f"[{letter}]", end=' ')
             elif letter in word:
                 print(f"({letter})", end=' ')
             else:
                 print(f"__ ", end=' ')
+            idx = idx + 1
     tries = tries + 1
     print(f'letters used = {letters_used}')
     print(f'letters left = {letters_left}')
