@@ -22,8 +22,7 @@ while tries <= 5:  # tries till limit
     except ValueError as e:
         print(e)
     else:
-        print("Word is valid.")
-
+        
         if word == guess:
             status = True  # if win status change
             break
